@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -17,16 +16,6 @@ class App extends Component {
     this.createObserver2();
 
   }
-
-
-  // callUser = async () => {
-  //   const { page } = this.state;
-  //   // setLoading(true);
-  //   let response = await fetch(
-  //     `https://randomuser.me/api/?page=${page}&results=25&seed=abc`,
-  //     { method: 'GET' }
-  //   );
-  // };
 
   createObserver1 = () => {
 
@@ -81,7 +70,7 @@ class App extends Component {
           <div class="cards-list" id="card-list">
             {arr1.map((x) => (
               <div class="card 1">
-                <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+                <div class="card_image"> <img alt="test" src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
                 <div class="card_title title-white">
                   <p>Card Title</p>
                 </div>
@@ -95,7 +84,7 @@ class App extends Component {
           <div class="cards-list" id="card-list">
             {arr2.map((x) => (
               <div class="card 1">
-                <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+                <div class="card_image"> <img alt="test" src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
                 <div class="card_title title-white">
                   <p>Card Title</p>
                 </div>
