@@ -51,7 +51,7 @@
 }
 
 #infinite-container2 {
-  height:auto;
+  height: 50%;
   overflow-y: scroll;
 }
 .cards-list {
