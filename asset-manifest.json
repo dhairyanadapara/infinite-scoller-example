@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/infinite-scoller-example/static/css/main.f55ab986.chunk.css",
+    "main.js": "/infinite-scoller-example/static/js/main.8c26c6d1.chunk.js",
+    "main.js.map": "/infinite-scoller-example/static/js/main.8c26c6d1.chunk.js.map",
+    "runtime-main.js": "/infinite-scoller-example/static/js/runtime-main.76fbeb7e.js",
+    "runtime-main.js.map": "/infinite-scoller-example/static/js/runtime-main.76fbeb7e.js.map",
+    "static/js/2.348a884b.chunk.js": "/infinite-scoller-example/static/js/2.348a884b.chunk.js",
+    "static/js/2.348a884b.chunk.js.map": "/infinite-scoller-example/static/js/2.348a884b.chunk.js.map",
+    "static/js/3.9e03d702.chunk.js": "/infinite-scoller-example/static/js/3.9e03d702.chunk.js",
+    "static/js/3.9e03d702.chunk.js.map": "/infinite-scoller-example/static/js/3.9e03d702.chunk.js.map",
+    "index.html": "/infinite-scoller-example/index.html",
+    "static/css/main.f55ab986.chunk.css.map": "/infinite-scoller-example/static/css/main.f55ab986.chunk.css.map",
+    "static/js/2.348a884b.chunk.js.LICENSE.txt": "/infinite-scoller-example/static/js/2.348a884b.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/infinite-scoller-example/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76fbeb7e.js",
+    "static/js/2.348a884b.chunk.js",
+    "static/css/main.f55ab986.chunk.css",
+    "static/js/main.8c26c6d1.chunk.js"
+  ]
+}
