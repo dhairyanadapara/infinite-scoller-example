@@ -1,19 +1,20 @@
-# Infinite Scroller Example
-
-There are multiple use cases in the modern UX when we are required to use infinite scrolling. Previously, dev are using the height of viewport and element to find out intersection of element is in the viewport. The main issue in same is that the function that calculates all the stuffs will be executed on main queue so it makes your app a bit slow. Few days ago I came across the Intersection API. Which can be used in following applications:
+There are multiple use cases in the modern UX when we are required to use infinite scrolling. Previously, devs are using the height of the viewport and element to find out the intersection of the element is in the viewport. The main issue in the same is that the function that calculations will be executed on the main queue so it makes your app a bit slow and it was bit unreliable. A few days ago I came across the Intersection Observer API. Which can be used in the following applications:
 
 -   Lazy-loading of images or other content as a page is scrolled.
--   Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages.
--   Reporting of visibility of advertisements in order to calculate ad revenues.
+-   Implementing "infinite scrolling" websites, where more and more content is loaded and rendered as you scroll so that the user doesn't have to flip through pages.
+-   Reporting of visibility of advertisements to calculate ad revenues.
 -   Deciding whether or not to perform tasks or animation processes based on whether or not the user will see the result.
 
 The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
+
+Source code is available at <https://github.com/dhairyanadapara/infinite-scoller-example>
+
+Demo link: <https://dhairyanadapara.github.io/infinite-scoller-example/>
 
 Let's start with the solution.
 
 ```js
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -85,7 +86,7 @@ class App extends Component {
 export default App;
 ```
 
-As you can see we have used the react class component so it will be easy to understand. You can use functional component also.
+As you can see we have used the react class component so it will be easy to understand. You can use functional components also.
 
 ```js
 createObserver = () => {
@@ -102,15 +103,15 @@ createObserver = () => {
 
 Starting with the creating observer, the `IntersectionObserver` takes 2 arguments.
 
-1. options
-   options are basically the configuration for Intersection Observer. It has 3 properties:
+1. **options**
+   options are the configuration for Intersection Observer. It has 3 properties:
 
-    1. **root :**\
-       The element which you want to use as viewport. If you want to use browser's viewport pass `null`.
+    1. **root:**\
+       The element which you want to use as the viewport. If you want to use the browser's viewport pass `null`.
     2. **rootMargin :**\
        Offset is added to the target rectangle while calculating intersections
-    3. **threshold :**\
-       A list of thresholds, sorted in increasing numeric order. Callback will be called when intersectionRatio passes the threshold
+    3. **threshold:**\
+       A list of thresholds, sorted in increasing numeric order. The callback will be called when intersectionRatio passes the threshold
 
 2. **callback**\
    callback has 2 argument:
@@ -119,7 +120,7 @@ Starting with the creating observer, the `IntersectionObserver` takes 2 argument
     1. **observer**\
        IntersectionObserver object same we have created in createObserver
 
-In out case, we have only 1 target element in observer so we will get only 1 object in entries. If you have multiple target elements targets to same observers you will get more entries.
+In our case, we have only 1 target element in the observer so we will get only 1 object in entries. If you have multiple target elements targets to the same observers you will get more entries.
 
 ```javascript
 handleIntersect = (entries, observer) => {
@@ -143,4 +144,8 @@ The main attributes are:
 
 -   **intersectionRatio:** returns the percentage of intersectionRect to the boundingClientRect
 -   **isIntersecting:** return if target and root are intersecting or not.
--   **target:** this is important attribute when we have multiple target attached to same observer
+-   **target:** this is an important attribute when we have multiple targets attached to the same observer
+
+Now as you can see in the above function we have iterated over the entries and checked if the intersection ratio is more than 0 is not means the target element has an intersection with root or viewport is happened or not. As you can see we are observing the element with id `loading` which is placed at bottom of the card-list element. So what will happen when we scroll down and reach the loading element it intersection will happen and the state will be updated accordingly.
+
+In this case, we are not doing any API calls so data is getting updated quickly. In case of fetch request, it would be better to use the `rootMargin`. You can also update the threshold based on requirements.
